@@ -1,0 +1,43 @@
+Int WET= 16; // Wet Indicator at Digital pin D0
+
+
+Int DRY= 2;  // Dry Indicator at Digital pin D4
+Int sense_Pin = 0; // sensor input at Analog pin A0
+
+
+Int value = 0;
+Void setup() {
+   Serial.begin(9600);
+   pinMode(WET, OUTPUT);
+   pinMode(DRY, OUTPUT);
+   delay(2000);
+}
+Void loop() {
+
+
+   Serial.print(“MOISTURE LEVEL : “);
+   Value= analogRead(sense_Pin);
+   Value= value/10;
+   Serial.println(value);
+
+
+        If(value<50)
+        {
+            digitalWrite(WET, HIGH);
+        }
+       Else
+       {
+           digitalWrite(DRY,HIGH);
+       }
+
+
+       Delay(1000);
+
+
+       digitalWrite(WET,LOW);
+
+
+       digitalWrite(DRY, LOW);
+}
+
+
